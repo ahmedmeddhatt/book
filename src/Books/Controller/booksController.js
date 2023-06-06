@@ -13,7 +13,7 @@ const errorType = require('../../../ErrorHandler/error.type')
 
 
 
-
+const auditAt = utils.dateFormat();
 const logger = new Logger('bookController')
 
     exports.GetBookList = async (req,res) => {
@@ -31,7 +31,7 @@ const logger = new Logger('bookController')
             const bookListQuery = queries.queryList.GET_BOOKS_LIST;
             const result = await dbConnection.dbQuery(bookListQuery, values);
             const books = result.rows;
-            const auditAt = utils.dateFormat();
+
             // const result = await dbConnection.dbQuery(bookListQuery)
             if (result.rows.length === 0) {
                 return res.status(404).send({ error: 'No Books Found!' });

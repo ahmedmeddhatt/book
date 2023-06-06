@@ -1,0 +1,33 @@
+{
+  "name": "projecta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "mocha --timeout 10000 --exit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "chai": "^4.3.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "password-validator": "^5.3.0",
+    "pg": "^8.11.0",
+    "pg-connection-string": "^2.6.0",
+    "randomstring": "^1.2.3",
+    "sequential-ids": "^0.0.0",
+    "swagger-ui-express": "^4.6.3",
+    "winston": "^3.9.0"
+  },
+  "devDependencies": {
+    "supertest": "^6.3.3"
+  }
+}

@@ -6,6 +6,7 @@ const userRoutes = require('./src/User/Routes/userRoutes')
 const noteRoutes = require('./src/Note/Routes/noteRoutes')
 const storeRoutes = require('./src/Store/Routes/storeRoutes')
 const bookRoutes = require('./src/Books/Routes/booksRoutes')
+const authRoutes = require('./src/Auth/Routes/authRoutes')
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
@@ -32,6 +33,7 @@ app.use('/api/v1/book', bookRoutes)
 app.use('/api/v1/store', storeRoutes)
 app.use('/api/v1/note', noteRoutes)
 app.use('/api/v1/user', userRoutes)
+app.use('/api/v1/auth', authRoutes)
 
 app.get('/', (req,res) => {
     res.send('Hello World!');

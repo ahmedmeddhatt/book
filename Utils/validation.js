@@ -1,7 +1,8 @@
-var passwordValidator = require('password-validator');
+const passwordValidator = require('password-validator');
 
 // Create a schema
-var schema = new passwordValidator();
+const schema = new passwordValidator();
+const bcrypt = require('bcryptjs')
 
 
 // Email Validation //
@@ -50,3 +51,9 @@ exports.isValidPassword = (password) => {
     
     return schema.validate(password);
 }
+
+
+// Compare Password
+exports.comparePass = async function(password, hashedPass) {
+  return await bcrypt.compare(password, hashedPass);
+};

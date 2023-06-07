@@ -8,7 +8,7 @@ const auditAction = require('../../../Audit/auditAction')
 const utils = require('../../../Utils/utility')
 const {message} = require('../../../ErrorHandler/error.messages')
 const ApiError = require('../../../ErrorHandler/api.error')
-const statusCode = require('../../../ErrorHandler/error.status')
+const statusCode = require('./../../../ErrorHandler/error.status')
 const errorType = require('../../../ErrorHandler/error.type')
 const bcrypt = require('bcryptjs')
 

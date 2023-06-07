@@ -1,9 +1,9 @@
 exports.queryList = {
 
-    // USER //
+    // AUTH //
     
-    GET_USER_LIST: `SELECT user_id, username, full_name, email, user_type, active FROM bms.app_user 
-                     LIMIT $1 OFFSET $2;`,
+    GET_LOGIN: `SELECT user_id, username, password, full_name, email, user_type, active FROM bms.app_user 
+                WHERE username = $1 or active = true;`,
     
     ADD_USER: `INSERT INTO bms.app_user
                 (username, email, full_name, password, user_type, created_at, created_by)
@@ -23,7 +23,30 @@ exports.queryList = {
     COUNT_USER_QUERY:`SELECT COUNT(*) FROM bms.app_user`,
     
     
+     // USER //
     
+     GET_USER_LIST: `SELECT user_id, username, full_name, email, user_type, active FROM bms.app_user 
+     LIMIT $1 OFFSET $2;`,
+
+    ADD_USER: `INSERT INTO bms.app_user
+    (username, email, full_name, password, user_type, created_at, created_by)
+    VALUES($1, $2, $3, $4, $5, $6, $7) 
+    RETURNING user_id, username, email, full_name, user_type, active, created_at, created_by;`,
+
+    GET_USER_BY_ID: `SELECT count(user_id) FROM bms.app_user WHERE username = $1 or email = $2; `,
+
+    UPDATE_USER:`UPDATE bms.app_user SET full_name = $1, password = $2, user_type = $3, active = $4
+    WHERE user_id = $5`,
+
+    GET_UPDATED_USER_QUERY:`SELECT user_id, username, email, full_name, user_type,
+        created_at, created_by FROM bms.app_user WHERE user_id = $1`,
+
+    DELETE_USER_QUERY: `DELETE FROM bms.app_user WHERE user_id = $1`,
+
+    COUNT_USER_QUERY:`SELECT COUNT(*) FROM bms.app_user`,
+
+
+
     // STORE //
     
     GET_STORE_LIST: `SELECT store_id, store_name, store_code, address FROM bms.store

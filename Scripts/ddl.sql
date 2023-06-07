@@ -71,7 +71,7 @@ CREATE TABLE bms.app_user (
 	"password" varchar(100) NOT NULL,
 	email varchar(355) NOT NULL,
 	user_type varchar(10) NOT NULL,
-	active int2 NULL DEFAULT 1,
+	active bool NULL DEFAULT true,
 	created_at timestamp NULL,
 	created_by varchar(100) NULL,
 	updated_at timestamp NULL,

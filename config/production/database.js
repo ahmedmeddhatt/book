@@ -4,7 +4,7 @@ const config = parse(process.env.P_DB_EXTERNAL_URL);
       connection: {
         client: 'postgres',
         connection: {
-          host: process.env.P_DB_HOST,
+          host: 'dpg-cht34tjhp8u4v7sdul5g-a',
           port: process.env.DB_PORT,
           database: process.env.P_DB,
           user: process.env.P_DB_USER,

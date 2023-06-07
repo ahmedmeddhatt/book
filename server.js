@@ -42,7 +42,13 @@ app.get('/', (req,res) => {
 const port = process.env.PORT || 8050
 app.listen(port, () => {
     
-    console.log(`Port ${port} is listening ...`);
+    console.log(`Port ${port} is listening ...`, 
+    // process.env.P_DB_HOST,
+    // process.env.DB_PORT,
+    // process.env.P_DB,
+    // process.env.P_DB_USER,
+    // process.env.P_DB_PASSWORD,
+    );
 })
 
 module.exports = app;

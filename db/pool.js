@@ -4,16 +4,17 @@ require('dotenv').config();
 
 
 const db_config = {
-    user: process.env.USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB,
-    password: process.env.PASSWORD,
+    host: process.env.P_DB_HOST,
     port: process.env.DB_PORT,
+          database: process.env.P_DB,
+          user: process.env.P_DB_USER,
+          password: process.env.P_DB_PASSWORD,
     // connectionString: process.env.DB_URL,
     connectionTimeoutMillis: 3000,
     idleTimeoutMillis: 2000,
     max: 20,
-    // ssl: true
+    keepAlive:true,
+    ssl: true
 }
 
 // const db_config = {

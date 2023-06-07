@@ -9,6 +9,7 @@ const bookRoutes = require('./src/Books/Routes/booksRoutes')
 const authRoutes = require('./src/Auth/Routes/authRoutes')
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
+const {db} = require('./config/production/database');
 
 // express
 const app = express()
@@ -48,6 +49,7 @@ app.listen(port, () => {
     // process.env.P_DB,
     // process.env.P_DB_USER,
     // process.env.P_DB_PASSWORD,
+    config
     );
 })
 

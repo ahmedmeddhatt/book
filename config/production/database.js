@@ -43,13 +43,22 @@
 //       },
 //     });
 
-const parse = require('pg-connection-string').parse;
-module.exports =  config = parse(`postgres://ahmed:9QGgb81XrW0B6XeCSCKJoDEk1DY8d35sU@dpg-cht34tjhp8u4v7sdul5g-a.oregon-postgres.render.com/bms_8vsa?ssl=true`);
+// const parse = require('pg-connection-string').parse;
+// module.exports =  config = parse(`postgres://ahmed:9QGgb81XrW0B6XeCSCKJoDEk1DY8d35sU@dpg-cht34tjhp8u4v7sdul5g-a.oregon-postgres.render.com/bms_8vsa?ssl=true`);
 
-module.exports = ({ env }) => ({
-  connection: {
-    client: 'postgres',
-    connection: config,
-    debug: false,
-  },
-});
+// module.exports = ({ env }) => ({
+//   connection: {
+//     client: 'postgres',
+//     connection: config,
+//     debug: false,
+//   },
+// });
+
+
+const parse = require('pg-connection-string').parse;
+const connectionString = 'postgres://ahmed:9QGgb81XrW0B6XeCSCKJoDEk1DY8d35sU@dpg-cht34tjhp8u4v7sdul5g-a.oregon-postgres.render.com/bms_8vsa?ssl=true';
+const configg = parse(connectionString);
+
+module.exports = configg;
+
+
